@@ -17,9 +17,10 @@ exports.collectData = function(request, cb){
 };
 
 exports.sendResponse = function(response, obj, status){
+
   status = status || 200;
   response.writeHead(status, headers);
   var string = JSON.stringify(obj);
-  console.log("Sending: %s", string);
+  console.log("sendResponse, Sending: %s", string);
   response.end(string);
 };
